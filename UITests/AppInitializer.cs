@@ -13,8 +13,10 @@ namespace UITests
             if (platform == Platform.Android)
             {
                 return ConfigureApp
-                    .Android
-                    .StartApp();
+
+                     .Android
+                     .InstalledApp("com.companyname.rayshotdogs")
+                     .StartApp();
             }
 
             return ConfigureApp
