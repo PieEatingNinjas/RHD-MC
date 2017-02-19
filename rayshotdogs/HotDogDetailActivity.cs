@@ -10,7 +10,7 @@ using Android.Content;
 
 namespace RaysHotDogs
 {
-    [Activity(Label = "Hot dog details", Icon = "@drawable/smallicon")]
+    [Activity(Label = "Hot dog details Mobile Center", Icon = "@drawable/smallicon")]
     public class HotDogDetailActivity : Activity
     {
         private ImageView hotDogImageView;
