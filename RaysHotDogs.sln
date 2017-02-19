@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaysHotDogs", "RaysHotDogs\RaysHotDogs.csproj", "{A8D79AA2-2574-45F6-9F96-50EF7F2BF06B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaysHotDogs.Core", "RaysHotDogs.Core\RaysHotDogs.Core.csproj", "{393E58A6-9860-4EFD-8092-5809D1ACDFB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITests", "UITests\UITests.csproj", "{C38125D0-E352-4A94-B3F7-CF6F9CE27620}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +24,10 @@ Global
 		{393E58A6-9860-4EFD-8092-5809D1ACDFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{393E58A6-9860-4EFD-8092-5809D1ACDFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{393E58A6-9860-4EFD-8092-5809D1ACDFB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C38125D0-E352-4A94-B3F7-CF6F9CE27620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C38125D0-E352-4A94-B3F7-CF6F9CE27620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C38125D0-E352-4A94-B3F7-CF6F9CE27620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C38125D0-E352-4A94-B3F7-CF6F9CE27620}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
