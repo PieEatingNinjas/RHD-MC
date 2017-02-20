@@ -7,6 +7,8 @@ using System.Net;
 using RaysHotDogs.Utility;
 using System;
 using Android.Content;
+using Microsoft.Azure.Mobile.Analytics;
+using System.Collections.Generic;
 
 namespace RaysHotDogs
 {
@@ -53,6 +55,9 @@ namespace RaysHotDogs
             BindData();
 
             HandleEvents();
+
+            //Track Event
+            Analytics.TrackEvent("Opened detail", new Dictionary<string, string> { { "HotDog", selectedHotDog.Name }});
         }
 
         private void HandleEvents()

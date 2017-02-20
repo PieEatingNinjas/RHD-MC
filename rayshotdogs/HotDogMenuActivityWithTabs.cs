@@ -12,6 +12,9 @@ using Android.Views;
 using Android.Widget;
 using RaysHotDogs.Core;
 using RaysHotDogs.Fragments;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace RaysHotDogs
 {
@@ -48,6 +51,10 @@ namespace RaysHotDogs
                 if (fragment != null)
                     e.FragmentTransaction.Remove(fragment);
                 e.FragmentTransaction.Add(Resource.Id.fragmentContainer, view);
+
+                //Track Event
+                Analytics.TrackEvent("Tab selected", new Dictionary<string, string> { { "Tab", tabText }});
+
             };
             tab.TabUnselected += delegate (object sender, ActionBar.TabEventArgs e)
             {
@@ -65,6 +72,9 @@ namespace RaysHotDogs
             if (resultCode == Result.Ok && requestCode == 100)
             {
                 var selectedHotDog = hotDogDataService.GetHotDogById(data.GetIntExtra("selectedHotDogId", 0));
+
+                //Track Event
+                Analytics.TrackEvent("Added Hotdog to basket", new Dictionary<string, string> { { "HotDog", selectedHotDog.Name }, { "Amount", data.GetIntExtra("amount", 0).ToString() } });
 
                 var dialog = new AlertDialog.Builder(this);
                 dialog.SetTitle("Confirmation");

@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Microsoft.Azure.Mobile.Analytics;
 
 namespace RaysHotDogs
 {
@@ -24,6 +25,9 @@ namespace RaysHotDogs
 
             FindViews();
             HandleEvents();
+
+            //Track Event
+            Analytics.TrackEvent("Opened about page");
         }
 
         private void HandleEvents()
@@ -33,6 +37,9 @@ namespace RaysHotDogs
 
         private void PhoneNumberTextView_Click(object sender, EventArgs e)
         {
+            //Track Event
+            Analytics.TrackEvent("Tapped phone number");
+
             var intent = new Intent(Intent.ActionCall);
             intent.SetData(Android.Net.Uri.Parse("tel:" + phoneNumberTextView.Text));
             StartActivity(intent);
