@@ -53,7 +53,7 @@ namespace RaysHotDogs
                 e.FragmentTransaction.Add(Resource.Id.fragmentContainer, view);
 
                 //Track Event
-                Analytics.TrackEvent("Tab selected", new Dictionary<string, string> { { "Tab", tabText }});
+                //Analytics.TrackEvent("Tab selected", new Dictionary<string, string> { { "Tab", tabText }});
 
             };
             tab.TabUnselected += delegate (object sender, ActionBar.TabEventArgs e)
@@ -74,7 +74,7 @@ namespace RaysHotDogs
                 var selectedHotDog = hotDogDataService.GetHotDogById(data.GetIntExtra("selectedHotDogId", 0));
 
                 //Track Event
-                Analytics.TrackEvent("Added Hotdog to basket", new Dictionary<string, string> { { "HotDog", selectedHotDog.Name }, { "Amount", data.GetIntExtra("amount", 0).ToString() } });
+                //Analytics.TrackEvent("Added Hotdog to basket", new Dictionary<string, string> { { "HotDog", selectedHotDog.Name }, { "Amount", data.GetIntExtra("amount", 0).ToString() } });
 
                 var dialog = new AlertDialog.Builder(this);
                 dialog.SetTitle("Confirmation");

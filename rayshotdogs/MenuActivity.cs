@@ -15,7 +15,7 @@ using Microsoft.Azure.Mobile;
 
 namespace RaysHotDogs
 {
-    [Activity(Label = "Ray's Hot Dogs", MainLauncher = true, Icon = "@drawable/smallicon")]
+    [Activity(Label = "Jay's Hot Dogs", MainLauncher = true, Icon = "@drawable/smallicon")]
     public class MenuActivity : Activity
     {
         private Button orderButton;
@@ -32,12 +32,12 @@ namespace RaysHotDogs
             FindViews();
             HandleEvents();
 
-            //Analytics and Crashes
-            MobileCenter.Start("fd8917f2-d8d8-4074-b9f1-9c9ff3441a36",
-                    typeof(Analytics), typeof(Crashes));
+            //1. Analytics and Crashes
+            //MobileCenter.Start("fd8917f2-d8d8-4074-b9f1-9c9ff3441a36",
+            //        typeof(Analytics), typeof(Crashes));
 
-            //Track Event
-            Analytics.TrackEvent("Application opened");
+            //2. Track Event
+            //Analytics.TrackEvent("Application opened");
 
             Crashes.ShouldProcessErrorReport = (report) =>
             {
