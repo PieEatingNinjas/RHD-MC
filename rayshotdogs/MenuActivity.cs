@@ -15,7 +15,7 @@ using Microsoft.Azure.Mobile;
 
 namespace RaysHotDogs
 {
-    [Activity(Label = "Jay's Hot Dogs", MainLauncher = true, Icon = "@drawable/smallicon")]
+    [Activity(Label = "Ray's Hot Dogs", MainLauncher = true, Icon = "@drawable/smallicon")]
     public class MenuActivity : Activity
     {
         private Button orderButton;
