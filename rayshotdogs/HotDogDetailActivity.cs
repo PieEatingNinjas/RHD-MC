@@ -57,7 +57,7 @@ namespace RaysHotDogs
             HandleEvents();
 
             //Track Event
-            //Analytics.TrackEvent("Opened detail", new Dictionary<string, string> { { "HotDog", selectedHotDog.Name }});
+            Analytics.TrackEvent("Opened detail", new Dictionary<string, string> { { "HotDog", selectedHotDog.Name }});
         }
 
         private void HandleEvents()

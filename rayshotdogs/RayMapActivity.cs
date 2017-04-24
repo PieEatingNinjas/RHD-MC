@@ -13,7 +13,7 @@ namespace RaysHotDogs
             base.OnCreate(savedInstanceState);
 
             //Crash
-            //Crashes.GenerateTestCrash();
+            Crashes.GenerateTestCrash();
         }
     }
 }

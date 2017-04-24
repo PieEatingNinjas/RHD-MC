@@ -44,7 +44,37 @@ namespace RaysHotDogs
             try
             {
                 //Tables
-                
+                MobileServiceClient client = new MobileServiceClient("https://mobile-e6fd7e74-f415-472f-9a89-362ce20b67d8.azurewebsites.net/");
+
+
+                User currentUser = null;
+                var login = await client.LoginAsync(this, MobileServiceAuthenticationProvider.MicrosoftAccount);
+                string id = login.UserId;
+
+                IMobileServiceTable<User> table = client.GetTable<User>();
+                var result = await table.CreateQuery().Where(u => u.ExternalID == id).ToListAsync();
+
+                if (result.Any())
+                {
+                    currentUser = result.First();
+                }
+
+
+                IMobileServiceTable<Order> orders = client.GetTable<Order>();
+                await orders.InsertAsync(new Order()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    UserID = Guid.NewGuid().ToString(),//currentUser.Id,
+                    OrderSummary = string.Join(" + ", cartItems.Select(hd => $"{hd.Amount} x {hd.HotDog.Name}"))
+                });
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Ordered placed!");
+                alert.SetMessage($"Dear {currentUser.FirstName}, your order has been placed!");
+
+                Dialog dialog = alert.Create();
+                dialog.Show();
+
             }
             catch (Exception ex)
             {

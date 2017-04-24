@@ -53,7 +53,7 @@ namespace RaysHotDogs
                 e.FragmentTransaction.Add(Resource.Id.fragmentContainer, view);
 
                 //Track Event
-                //Analytics.TrackEvent("Tab selected", new Dictionary<string, string> { { "Tab", tabText }});
+                Analytics.TrackEvent("Tab selected", new Dictionary<string, string> { { "Tab", tabText }});
 
             };
             tab.TabUnselected += delegate (object sender, ActionBar.TabEventArgs e)

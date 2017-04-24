@@ -33,11 +33,11 @@ namespace RaysHotDogs
             HandleEvents();
 
             //1. Analytics and Crashes
-            //MobileCenter.Start("fd8917f2-d8d8-4074-b9f1-9c9ff3441a36",
-            //        typeof(Analytics), typeof(Crashes));
+            MobileCenter.Start("fd8917f2-d8d8-4074-b9f1-9c9ff3441a36",
+                    typeof(Analytics), typeof(Crashes));
 
             //2. Track Event
-            //Analytics.TrackEvent("Application opened");
+            Analytics.TrackEvent("Application opened");
 
             Crashes.ShouldProcessErrorReport = (report) =>
             {
@@ -46,7 +46,7 @@ namespace RaysHotDogs
 
             Crashes.ShouldAwaitUserConfirmation = () =>
             {
-                return true; // Return true if the SDK should await user confirmation, otherwise false.
+                return false; // Return true if the SDK should await user confirmation, otherwise false.
             };
 
 
