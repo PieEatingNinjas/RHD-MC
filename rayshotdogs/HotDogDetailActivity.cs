@@ -33,17 +33,6 @@ namespace RaysHotDogs
 
             SetContentView(Resource.Layout.HotDogDetailView);
 
-            //early demos
-            //HotDogDataService dataService = new HotDogDataService ();
-            //selectedHotDog = dataService.GetHotDogById (1);
-
-            //FindViews();
-
-            //BindData();
-            //------------------------------------------------------------------
-
-            //HandleEvents();
-
             //navigation demos
             var selectedHotDogId = Intent.Extras.GetInt("selectedHotDogId");
 
@@ -57,7 +46,7 @@ namespace RaysHotDogs
             HandleEvents();
 
             //Track Event
-            Analytics.TrackEvent("Opened detail", new Dictionary<string, string> { { "HotDog", selectedHotDog.Name }});
+            //Analytics.TrackEvent("Opened detail", new Dictionary<string, string> { { "HotDog", selectedHotDog.Name }});
         }
 
         private void HandleEvents()
@@ -66,11 +55,6 @@ namespace RaysHotDogs
             {
                 var amount = Int32.Parse(amountEditText.Text);
                 AddToCart(selectedHotDog, amount);
-
-                //var dialog = new AlertDialog.Builder(this);
-                //dialog.SetTitle("Confirmation");
-                //dialog.SetMessage("Your hot dog has been added to your cart!");
-                //dialog.Show();
 
                 var intent = new Intent();
                 intent.PutExtra("selectedHotDogId", selectedHotDog.HotDogId);
